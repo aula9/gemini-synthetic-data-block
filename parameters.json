@@ -1,0 +1,73 @@
+{
+    "version": 1,
+    "type": "synthetic-data",
+    "info": {
+        "name": "gemini-block",
+        "description": "generate images using gemini api"
+    },
+    "parameters": [
+        {
+            "name": "Gemini API Key",
+            "value": "",
+            "type": "secret",
+            "help": "API key from Google AI Studio (https://aistudio.google.com/apikey)",
+            "param": "GEMINI_API_KEY"
+        },
+        {
+            "name": "Prompt",
+            "value": "A realistic photo of a red apple on a wooden table, natural light",
+            "type": "string",
+            "help": "The prompt to generate images from",
+            "param": "prompt"
+        },
+        {
+            "name": "Label",
+            "value": "apple",
+            "type": "string",
+            "help": "Images will be added to Edge Impulse with this label",
+            "param": "label"
+        },
+        {
+            "name": "Number of images",
+            "value": "5",
+            "type": "int",
+            "help": "Number of images to generate",
+            "param": "images"
+        },
+        {
+            "name": "Upload to category",
+            "value": "split",
+            "type": "select",
+            "valid": [
+                {
+                    "label": "Split 80/20 between training and testing",
+                    "value": "split"
+                },
+                {
+                    "label": "Training",
+                    "value": "training"
+                },
+                {
+                    "label": "Testing",
+                    "value": "testing"
+                }
+            ],
+            "help": "Data will be uploaded to this category in your project",
+            "param": "upload-category"
+        },
+        {
+            "name": "Gemini model",
+            "value": "gemini-3.1-flash-image",
+            "type": "string",
+            "help": "Gemini image model name (e.g. gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-3-pro-image)",
+            "param": "model"
+        },
+        {
+            "name": "Aspect Ratio",
+            "value": "1:1",
+            "type": "string",
+            "help": "Aspect ratio, e.g. 1:1, 4:3, 16:9",
+            "param": "aspect-ratio"
+        }
+    ]
+}
